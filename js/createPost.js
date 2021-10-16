@@ -1,4 +1,4 @@
-import { getRandomIntInclusive } from './utils/getRandomIntInclusive';
+import { getRandomIntInclusive } from './utils/getRandomIntInclusive.js';
 
 const MESSAGES_TEMP = ['Всё отлично!', 'В целом всё неплохо. Но не всё.', 'Лица у людей на фотке перекошены, как будто их избивают.'];
 const NAMES_TEMP = ['Шерлок', 'Дик', 'John Doe', 'Агент Смит'];

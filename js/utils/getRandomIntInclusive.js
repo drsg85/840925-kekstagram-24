@@ -6,3 +6,5 @@ const getRandomIntInclusive = (min, max) => {
   }
   throw new Error('Неверные входные данные');
 };
+
+export { getRandomIntInclusive };
