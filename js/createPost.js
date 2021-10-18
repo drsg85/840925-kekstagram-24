@@ -47,4 +47,4 @@ const createPostsArray = (amount) => {
   return postsArray;
 };
 
-console.log(createPostsArray(2));
+export { createPostsArray };
