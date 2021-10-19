@@ -1,15 +1,12 @@
-import { createPostsArray } from './createPost.js';
-
 const pictureElement = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture')
   .content
   .querySelector('.picture');
-const randomUsers = createPostsArray(25);
 
-const randomUserGen = () => {
+const renderPosts = (posts) => {
   const randomUsersFragment = document.createDocumentFragment();
 
-  randomUsers.forEach((post) => {
+  posts.forEach((post) => {
     const pictureClonedNode = pictureTemplate.cloneNode(true);
     pictureClonedNode.querySelector('.picture__img').src = post.url;
     pictureClonedNode.querySelector('.picture__likes').textContent = post.likes;
@@ -18,8 +15,6 @@ const randomUserGen = () => {
   });
 
   pictureElement.appendChild(randomUsersFragment);
-
 };
 
-randomUserGen();
-
+export { renderPosts };
