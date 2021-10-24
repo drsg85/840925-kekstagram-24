@@ -17,4 +17,4 @@ const renderPosts = (posts) => {
   pictureElement.appendChild(randomUsersFragment);
 };
 
-export { renderPosts };
+export { renderPosts, pictureTemplate };

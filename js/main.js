@@ -1,4 +1,5 @@
 import './createPost.js';
+import './fullScreenView.js';
 import { createPostsArray } from './createPost.js';
 import { renderPosts } from './randomUserCreate.js';
 
