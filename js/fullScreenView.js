@@ -33,6 +33,10 @@ const renderComment = (commentsArr) => {
   socialComment.appendChild(fragment);
 };
 
+const clearSocialComment = () => {
+  socialComment.innerHTML = '';
+};
+
 document.querySelector('.pictures').addEventListener('click', (evt) => {
   const picture = evt.target.closest('.picture');
   const domPictures = document.querySelectorAll('.picture');
@@ -52,12 +56,14 @@ document.querySelector('.pictures').addEventListener('click', (evt) => {
 
 closeButton.addEventListener('click', () => {
   modalWindow.classList.add('hidden');
+  clearSocialComment();
 });
 
 document.addEventListener('keydown', (evt) => {
   if (evt.key === 'Escape') {
     evt.preventDefault();
     modalWindow.classList.add('hidden');
+    clearSocialComment();
   }
 });
 
