@@ -16,7 +16,7 @@ const generateId = () => {
 
 const createMessage = () => ({
   id: generateId(),
-  avatar: `img/avatar${getRandomIntInclusive(1, 6)}.svg`,
+  avatar: `img/avatar-${getRandomIntInclusive(1, 6)}.svg`,
   message: MESSAGES_TEMP[getRandomIntInclusive(0, MESSAGES_TEMP.length - 1)],
   name: NAMES_TEMP[getRandomIntInclusive(0, NAMES_TEMP.length - 1)],
 });
