@@ -1,9 +1,12 @@
+import { updatePictureData } from './fullScreenView.js';
+
 const pictureElement = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture')
   .content
   .querySelector('.picture');
 
 const renderPosts = (posts) => {
+  updatePictureData(posts);
   const randomUsersFragment = document.createDocumentFragment();
 
   posts.forEach((post) => {
@@ -17,4 +20,4 @@ const renderPosts = (posts) => {
   pictureElement.appendChild(randomUsersFragment);
 };
 
-export { renderPosts, pictureTemplate };
+export { renderPosts };
