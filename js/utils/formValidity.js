@@ -33,13 +33,22 @@ document.addEventListener('keydown', (evt) => {
   }
 });
 
-hashTagsInput.addEventListener('input', () => {
+hashTagsInput.addEventListener('input', (evt) => {
   const valueLength = hashTagsInput.value.length;
   const re = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
-  const hashTags = new Set(); // как использовать Set?
-  if (re.test(hashTagsInput.value) === false) {
-    // как с помощью этого условия передать ошибку?
+
+  const tags = evt.target.value.split(' ');
+  if (tags.length > 2) {
+    hashTagsInput.setCustomValidity('перебор');
   }
+  else {
+    hashTagsInput.setCustomValidity('');
+  }
+  // tags.forEach((tag) => {
+  //   // Тут проверка для каждого отдельного тэга
+  // });
+
+  evt.target.reportValidity();
 
   if (valueLength < MIN_NAME_LENGTH) {
     hashTagsInput.setCustomValidity(`Ещё ${  MIN_NAME_LENGTH - valueLength } симв.`);
@@ -52,9 +61,3 @@ hashTagsInput.addEventListener('input', () => {
   hashTagsInput.reportValidity();
 });
 
-hashTagsInput.addEventListener('focus', (e) => {
-  if (e.key === 'Escape') {
-    e.stopPropagation();
-    // нет представления, как сделать отмену по нажатию esc
-  }
-});
