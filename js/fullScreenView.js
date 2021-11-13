@@ -39,6 +39,9 @@ const clearSocialComment = () => {
 
 document.querySelector('.pictures').addEventListener('click', (evt) => {
   const picture = evt.target.closest('.picture');
+  if (!evt.target.closest('.picture')) {
+    return
+  };
   const domPictures = document.querySelectorAll('.picture');
   const pictures = Array.from(domPictures);
   const index = pictures.indexOf(evt.target.closest('.picture'));
@@ -56,6 +59,7 @@ document.querySelector('.pictures').addEventListener('click', (evt) => {
 
 closeButton.addEventListener('click', () => {
   modalWindow.classList.add('hidden');
+  document.body.classList.remove('modal-open');
   clearSocialComment();
 });
 
@@ -63,6 +67,7 @@ document.addEventListener('keydown', (evt) => {
   if (evt.key === 'Escape') {
     evt.preventDefault();
     modalWindow.classList.add('hidden');
+    document.body.classList.remove('modal-open');
     clearSocialComment();
   }
 });
